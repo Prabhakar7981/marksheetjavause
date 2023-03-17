@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        background-color: #c5cae9;
+        padding: 100px;
+      }
+      
+      .container{
+        width: 1000px;
+        height: 440px;
+        margin: 0 auto;
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-top: 40px;
+        border-radius: 12px;
+        background-color: #90a4ae;
+        font-family:serif;
+      }
+      
+      /* .container h2{
+        text-align: center;
+      } */
+      
+      table{
+        margin: 0 auto;
+      }
+      
+      td, th {
+        padding: 12px;
+        border: 2px solid;
+      }
+    </style>
+</head>
+<body>
+        <div class="container">
+	<table>
+		<h2 align="center
+        ">Mark sheet</h2>
+		<tr>
+			<th rowspan="2">Name</th>
+			<th colspan="4">Score</th>
+
+		</tr>
+		<tr>
+			<th>Hindi</th>
+			<th>English</th>
+			<th>Math</th>
+			<th>C Programming</th>
+		</tr>
+		<tr>
+			<td><input type="text" id="10"></td>
+			<td><input type="text" id="20"></td>
+			<td><input type="text" id="30"></td>
+			<td><input type="text" id="40"></td>
+			<td><input type="text" id="50"></td>
+		</tr>
+		<tr>
+			<th height="30" align="center">
+			<input type="submit" value="Check Result" onclick="Sub()"></th>
+		</tr>	
+	</table>
+	<br>
+	<table border="2px" cellspacing="5" bgcolor="white"
+		height="100" width="500" cellpadding="5" id="TableScore">
+		<caption><b>Student Data</b></caption>
+		<tr>
+			<th width="180">Name</th>
+			<th>Total</th>
+			<th>Average</th>
+			<th>Pass Or Fail</th>
+		</tr>
+		
+	</table>
+	<!-- </center> -->
+	<script type="text/javascript">
+		function Sub(){
+			var n, k, r, e, v, sum, avg;
+			n=(document.getElementById('10').value);
+			k=parseFloat(document.getElementById('20').value);
+			r=parseFloat(document.getElementById('30').value);
+			e=parseFloat(document.getElementById('40').value);
+			v=parseFloat(document.getElementById('50').value);
+
+			sum=k+r+e+v;
+			avg=sum/4;
+			var newTable = document.getElementById('TableScore');
+			var row = newTable.insertRow(-1);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(0);
+			var cell3 = row.insertCell(0);
+			var cell4 = row.insertCell(0);
+
+			cell4.innerHTML= n;
+			cell3.innerHTML=sum;
+			cell2.innerHTML = avg;
+
+			if(avg>=40){
+				cell1.innerHTML="<font color=green>Pass</font>";
+			}else{
+				cell1.innerHTML="<font color=red>Fail</font>";
+			}
+		}
+	</script></div>
+</body>
+</html>
